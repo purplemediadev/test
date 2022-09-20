@@ -53,7 +53,7 @@ const score3 = 3437593785953
 
 Here's a few css challenges, plenty of ways to approach them, these have been taken from [cssbattle](https://cssbattle.dev). Feel free to use SCSS on these. 
 
-Again, just to see your approach
+Unlike cssbattle, we're not looking for the shortest amount of css. We're after the best supported methods across all browsers/devices and reusability.
 
 ### Graphic one
 
