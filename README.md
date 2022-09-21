@@ -36,7 +36,7 @@ Write a function that can return a boolean for whether all values match `true` o
 
 ## Test Two
 
-You've created a game in which there are multiple score values, ranging from 0 to 1,000,000,000. Write a function that can abbreviate any number, to one fixed decimal place, with a letter (k, m, b, t) for it's unit:
+You've created a application in which there are varied monetary values. Write a function that can abbreviate any number, to one fixed decimal place, with a letter (k, m, b, t) for it's unit:
 
 ```
 const score1 = 194511
