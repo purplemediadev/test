@@ -1,0 +1,18 @@
+
+/*
+I personally perfer to split my css files into multiple for better organisation. each controlling a seperate part of the page
+or having each control their own pages, typically with a main css file to whole values that are more globalised.
+
+In this main file. we can only really hold the data for the background images as the rest of the data makes more sense inside of files that are dedicated to
+each image (including the background colors.)
+*/
+
+.background {
+    width: 40rem;
+    height: 30rem;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

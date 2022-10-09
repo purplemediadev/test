@@ -1,0 +1,53 @@
+/*
+BRICK
+*/
+:root {
+    --brick-background: #293360;
+    --brick-col-1: #a64944;
+    --brick-col-2: #ff6058;
+}
+
+#Image-3 {
+    background-color: var(--brick-background);    
+    /*
+    Comment below can be deleted to show that the brick (I think? It looks like a brick at least...) can scale with its background 
+    */
+    /*
+    width: 100%;
+    */
+}
+
+/*
+When first saw the brick I knew making this would be pretty easy. Here we just use three divs nested into each other with border radius specify border radius
+*/
+.brick{
+    background-color: var(--brick-col-1);
+    width: 50%;
+    aspect-ratio: 5 / 3;
+    border-radius: 2rem;
+}
+
+/*
+in the div inside of the first. I just assign a flex, change the color and make the height slightly smaller than the height of the parent and copy the parents width.
+*/
+.brick div{
+    background-color: var(--brick-col-2);
+    width: 100%;
+    height: 83%;
+    border-radius: 2rem;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+finally I assign the size, color and border radius of the final layer of the brick
+*/
+.brick div div{
+    background-color: var(--brick-col-1);
+    width: 70%;
+    height: 40%;
+    border-radius: 2rem;
+}

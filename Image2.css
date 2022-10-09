@@ -1,0 +1,95 @@
+/*
+PIANO
+*/
+
+/*
+inside of our root we are going to hold the color values for our background and piano
+*/
+:root {
+    --piano-background: #99833d;
+    --piano-white: #ffffff;
+    --piano-black: #191919;
+}
+
+#Image-2 {
+    background-color: var(--piano-background);
+    /*
+    Comment below can be deleted to show that the piano can scale with its background 
+    */
+    /*
+    width: 100%;
+    */
+}
+
+/*
+Unlike in the triangles example, in piano we have more freedom to use percentages to control the scaleability of the image. in this class I assign the color of the piano,
+its base width, its aspect ratio to prevent the image from scaling improperly, a border radius and flex for the keys and sharps.
+we use two flex boxes stacked on top of each other inside of the piano div to make all the keys and sharps.
+*/
+.piano {
+    background-color: var(--piano-black);
+    width: 50%;
+    aspect-ratio: 5 / 3;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+asigning a flex box for the white keys to be held in. thanks to the paino being made out of standard divs. we can use percentages to make the flex boxes scale well
+*/
+.keys {
+    width: 95%;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position:static;
+    gap: 3%;
+    align-items: flex-end;
+}
+
+/*
+assigning the size, border radius, margin and z index of the white keys. we need the whites to be below the sharps so assigning them a z index is the best way to do this
+we also assign a margin for the whites to pick them up from the bottom of the keyboard
+*/
+.keys div {
+    width: 12%;
+    height: 140%;
+    background-color: var(--piano-white);
+    border-radius: 10px;
+    margin-bottom: 3%;
+    z-index: 1;
+}
+
+/*
+assigning the sharps flex box. similar to what we did with the keys flex box but with minor changes as the sharps will stand in seperate distances from each other.
+*/
+.sharps {
+    width: 95%;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position:static;
+    gap: 6.8%;
+}
+
+/*
+assigning the sharps size, color and z index. ensuring the z index is above that of the white keys.
+*/
+.sharps div {
+    background-color: var(--piano-black);
+    z-index: 2;
+    width: 8%;
+    height: 120%;
+}
+
+/*
+removing the opacity of the third sharp. choosing to use another method to have 5 sharps on the piano would of been much harder to make with minimal lines of css and being able to scale properly
+*/
+.sharps div:nth-child(3) {
+    opacity: 0;
+}
