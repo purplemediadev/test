@@ -1,0 +1,64 @@
+/*
+STACKED TRIANGLES
+*/
+
+/*
+inside of our root we are going to hold the color values for our background and triangles
+*/
+
+:root {
+    --triangle-background: #007065;
+    --triangle-1: #00a79d;
+    --triangle-2: #f5c287;
+    --triangle-3: #ffeed1;
+}
+
+/*
+assigning the color of the background here. this is unanimous across all image css files so I will only comment about this here
+*/
+#Image-1 {
+    background-color: var(--triangle-background);
+}
+
+
+/*
+assigning the size, border left and right transparency, border bottom and flex of each of the triangles.
+we assign a border left and right to the triangles as this is the only way im aware of to make this kind of triangle in vanilla css without the use of an SVG element (Which I assume is not desired)
+
+as each triangle parents the one above it. A flex is being used to center each triangle that is a child of another.
+*/
+.triangle {
+    width: 0; 
+    height: 0;
+    border-left: 13.3rem solid transparent;
+    border-right: 13.3rem solid transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 10rem solid;
+}
+
+/*
+Using a transform translate. I can push each child triangle up from its parent triangle to reflect the intended image.
+since these divs need to have a width and height of zero,
+percentage values are unusable for movement (and being able to change the scale of the triangles) so I have reseorted to using rem units.
+*/
+.triangle div {
+    transform: translateY(-5rem);
+}
+
+/*
+Finally I can use the IDs of each div to assign color. I also use the ID of the first triangle in the list to push it down to center the image, again using rem.
+*/
+#shape-1 {
+    color: var(--triangle-1);
+    transform: translateY(5rem);
+}
+
+#shape-2 {
+    color: var(--triangle-2); 
+}
+
+#shape-3 {
+    color: var(--triangle-3);
+}
